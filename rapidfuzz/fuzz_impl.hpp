@@ -87,6 +87,7 @@ partial_ratio_impl(const detail::Range<InputIt1>& s1, const detail::Range<InputI
         std::vector<size_t> scores(len2 - len1, std::numeric_limits<size_t>::max());
         std::vector<std::pair<size_t, size_t>> windows = {{0, len2 - len1 - 1}};
         std::vector<std::pair<size_t, size_t>> new_windows;
+        new_windows.reserve(1024);
 
         while (!windows.empty()) {
             for (const auto& window : windows) {
